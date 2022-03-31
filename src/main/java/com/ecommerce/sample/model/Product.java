@@ -1,5 +1,7 @@
 package com.ecommerce.sample.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -21,9 +23,9 @@ public class Product {
 
     //manmy to one
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "categoryid")
     Category category;
-
 
 
     public String getProoductName() {
