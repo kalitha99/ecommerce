@@ -65,4 +65,13 @@ public class ProductService {
         }
 
     }
+
+    public Product findById(Integer productid) throws Exception {
+        Optional<Product> productbyId = productRepo.findById(productid);
+        if (productbyId.isEmpty()){
+            throw new Exception("invalid product id");
+        }
+            return productbyId.get();
+
+    }
 }

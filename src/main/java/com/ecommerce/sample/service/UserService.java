@@ -7,6 +7,7 @@ import com.ecommerce.sample.model.User;
 import com.ecommerce.sample.repository.RoleDao;
 import com.ecommerce.sample.repository.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
