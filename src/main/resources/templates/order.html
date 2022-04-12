@@ -664,7 +664,7 @@
         <table class="table-fixed w-full text-right border rounded">
             <thead class="bg-gray-100">
             <tr>
-                <th class="text-left pl-4">Product</th>
+                <th class="text-left pl-4">Products</th>
                 <th>Qty</th>
                 <th>Price</th>
                 <th class="pr-4">Total</th>
@@ -672,8 +672,6 @@
             </thead>
             <tbody>
             <tr th:each="items : ${cartitems.cartitrms}">
-
-
                 <td class="pr-4" th:text="${items.product.getProoductName()}"></td>
                 <td th:text="${items.getQuantity()}"></td>
                 <td th:text="${items.product.getProoductPrice()}"></td>

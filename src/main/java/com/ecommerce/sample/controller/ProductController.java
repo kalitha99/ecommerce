@@ -9,7 +9,7 @@ import com.ecommerce.sample.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-//import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -32,7 +32,7 @@ public class ProductController {
     }
 
     @PostMapping("/add")
-    //@PreAuthorize("hasRole('Admin')")
+    @PreAuthorize("hasRole('Admin')")
     public ResponseEntity<com.ecommerce.sample.common.ApiResponse> createProduct(@RequestBody ProductDto productDto) {
         Optional<Category> optionalCategory = categoryRepo.findById(productDto.getCategoryid());
         if (optionalCategory.isPresent()) {
@@ -45,7 +45,7 @@ public class ProductController {
     }
 
     @PostMapping("/edit/{productid}")
-   // @PreAuthorize("hasRole('Admin')")
+    @PreAuthorize("hasRole('Admin')")
     public ResponseEntity<com.ecommerce.sample.common.ApiResponse> editProduct(@PathVariable("productid") Integer productid,@RequestBody ProductDto productDto) throws Exception {
         Optional<Category> optionalCategory = categoryRepo.findById(productDto.getCategoryid());
         if (optionalCategory.isPresent()) {
